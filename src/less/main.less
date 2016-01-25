@@ -1,0 +1,133 @@
+@import "variables";
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    color: @fontPrimaryColor;
+    background: @bgFillColor;
+    margin-left: 10%;
+    margin-right: 10%;
+    min-width: 420px;
+    font-size: @baseFontSize;
+}
+
+header {
+    min-height: 90px;
+}
+
+main {
+    margin-right: @sizeWlWidth + 10;
+}
+
+aside {
+    float: right;
+    border-top: solid;
+    border-width: 10px;
+    border-color: @actionColor;
+    width: @sizeWlWidth;
+    min-height: 400px;
+    background: @bgBlockColor;
+    padding: 10px 20px 20px 20px;
+
+    .title {
+        text-transform: uppercase;
+        font-size: @baseFontSize + 10px;
+        font-family: 'Ubuntu Condensed', sans-serif;
+        margin-bottom: 10px;
+    }
+
+    .item {
+        min-height: 17px;
+        padding: 5px;
+        margin-top: 5px;
+
+        .label {
+            display: inline-block;
+            max-width: 170px;
+        }
+
+        .btn {
+            float: right;
+            display: none;
+
+            .material-icons {
+                font-size: @baseFontSize + 2px;
+                font-weight: bold;
+            }
+        }
+
+    }
+
+    .item:hover {
+        background: @bgSelectionColor;
+
+        .btn {
+            display: block;
+        }
+    }
+
+    .total {
+        margin-top: 25px;
+        margin-bottom: 10px;
+
+        #sum {
+            color: @actionColor;
+            font-weight: bolder;
+        }
+    }
+
+    .action {
+        font-size: @baseFontSize - 2px;
+    }
+}
+
+.card {
+    background: @bgBlockColor;
+    display: inline-block;
+    margin-right: @spaceBetweenCardsVertical;
+    margin-bottom: @spaceBetweenCardsHorizontal;
+    text-align: center;
+    width: @sizeCardImgWidth;
+    vertical-align: top;
+
+    img {
+        width: @sizeCardImgWidth;
+        height: @sizeCardImgHeight;
+    }
+
+    .image {
+        height: @sizeCardImgHeight;
+    }
+
+    .action {
+        height: 30px;
+        line-height: 30px;
+        vertical-align: middle;
+        font-size: @baseFontSize + 2px;
+        cursor: pointer;
+    }
+
+    .title {
+        background: @bgFillColor;
+        padding-top: 5px;
+    }
+
+    .price {
+        background: @bgFillColor;
+        color: @fontSecondaryColor;
+        padding-top: 5px;
+    }
+
+}
+
+.action {
+    color: @actionColor;
+    cursor: pointer;
+
+    a {
+        color: @actionColor;
+    }
+}
+
+.wishlisted {
+    color: @fontSuccessColor;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app="wishlistApp">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="./assets/main.css">
+
+		<link href='https://fonts.googleapis.com/css?family=Ubuntu:300&subset=latin,cyrillic-ext,cyrillic' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Ubuntu+Condensed&subset=latin,cyrillic-ext,cyrillic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+
+		<script src="./src/js/app.js"></script>
+		<script src="./src/js/services.js"></script>
+		<script src="./src/js/controllers.js"></script>
+	</head>
+
+	<body ng-controller="wishlistController">
+		<header>
+		</header>
+
+		<aside>
+			<div class="title">
+				Список желаемого
+			</div>
+			<div class="items">
+				<div class="item" ng-repeat="(id, wish) in wishes">
+					<div class="label">
+						{{ wish.name }}
+					</div>
+					<div class="btn action" ng-click="remove(id)">
+						<i class="material-icons">clear</i>
+					</div>
+				</div>
+			</div>
+			<div class="total">
+				Сумма: <span id="sum">{{ sum }}</span> руб.
+			</div>
+			<div class="action">
+				<a href="#" ng-click="clear()">Очистить список</a>
+			</div>
+		</aside>
+
+		<main>
+			<div class="card" ng-repeat="(id, game) in games">
+				<div class="image">
+					<img src="{{ game.cover }}">
+				</div>
+				<div class="action" ng-click="put(id)" ng-class="{'wishlisted' : game.checked}">
+					{{ game.checked ? 'В списке' : 'Добавить'}}
+				</div>
+				<div class="title">
+					{{ game.name }}
+				</div>
+				<div class="price">
+					{{ game.price }}
+				</div>
+			</div>
+
+		</main>
+
+	</body>
+
+</html>
